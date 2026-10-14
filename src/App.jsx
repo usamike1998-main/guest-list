@@ -5,14 +5,5 @@ import { useGuest } from "./GuestContext";
 export default function App() {
   const { selectedGuest } = useGuest();
 
-  return (
-    <>
-      <h1>Guest list</h1>
-      {selectedGuest ? (
-        <GuestDetails selectedGuest={selectedGuest} />
-      ) : (
-        <GuestList />
-      )}
-    </>
-  );
+  return <main>{selectedGuest ? <GuestDetails /> : <GuestList />}</main>;
 }

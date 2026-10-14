@@ -1,7 +1,7 @@
 import { useGuest } from "./GuestContext";
 import GuestItem from "./GuestItem";
 
-export default function GuestList({}) {
+export default function GuestList() {
   const { guests } = useGuest();
   if (!guests) return <p>Guests are loading</p>;
   return (
@@ -17,7 +17,7 @@ export default function GuestList({}) {
         </thead>
         <tbody>
           {guests.map((guest, i) => (
-            <GuestItem key={i} guest={guest} />
+            <GuestItem key={guest.id} guest={guest} />
           ))}
         </tbody>
       </table>
